@@ -42,8 +42,10 @@ document.body.innerHTML = document.body.innerHTML
 // var sidebar = doc.getElementsByClassName("vut-sidebar")[0]
 var menu = document.getElementById("vut-menu")
 
-menu.insertBefore(menu.children[1], menu.children[0])
-menu.insertBefore(menu.children[2], menu.children[1])
+if (menu != null) {
+    menu.insertBefore(menu.children[1], menu.children[0])
+    menu.insertBefore(menu.children[2], menu.children[1])
+}
 
 
 
@@ -65,7 +67,8 @@ menu.insertBefore(menu.children[2], menu.children[1])
 
 // remove search box
 searchBox = document.getElementsByClassName("search-menu-mobile-wrap")[0]
-searchBox.parentNode.removeChild(searchBox)
+if (searchBox != null)
+    searchBox.parentNode.removeChild(searchBox)
 
 
 
@@ -83,12 +86,14 @@ document.body.appendChild(editCSS)
 
 
 // hide filter form to collapsible menu
-let origFiltr = document.getElementsByClassName("form-filter-box")[0]
-let filtrParent = origFiltr.parentNode
+var origFiltrArray = document.getElementsByClassName("form-filter-box")
+if (origFiltr != null) {
+    var origFiltr = origFiltrArray[0]
+    var filtrParent = origFiltr.parentNode
 
-let filtr = document.createElement('details')
-filtr.innerHTML ="<summary><h2>Filtr</h2></summary>"
-filtr.appendChild(origFiltr)
+    var filtr = document.createElement('details')
+    filtr.innerHTML ="<summary><h2>Filtr</h2></summary>"
+    filtr.appendChild(origFiltr)
 
-filtrParent.insertBefore(filtr, filtrParent.children[1])
-
+    filtrParent.insertBefore(filtr, filtrParent.children[1])
+}
