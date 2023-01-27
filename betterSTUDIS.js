@@ -8,6 +8,14 @@
 // ==/UserScript==
 
 
+var usernameInput = document.getElementById("login7")
+
+// login page
+if (usernameInput != null) {
+    // autofocus username input
+    usernameInput.focus()
+    return;
+}
 
 // replace confusing texts
 document.body.innerHTML = document.body.innerHTML
