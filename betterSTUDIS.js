@@ -20,6 +20,7 @@ if (usernameInput != null) {
 // replace confusing texts
 document.body.innerHTML = document.body.innerHTML
                             .replace('Registrace zadání', 'Projekty')
+                            .replace('Registrace vyučování', 'Registrace cvičení')
                             .replace('Registrace termínů', 'Termíny')
                             .replace('Individuální rozvrh', 'Rozvrh')
                             .replace('Aktuality z předmětu', 'Aktuality')
